@@ -8,20 +8,21 @@
     2016 => "Río de Janeiro", 2020 => "Tokio"
   );
 
-  $inicio=1960;
-  $final=2016;
 
-  function juegosOlimpicos($JJOO, $inicio, $final){
+
+  function juegosOlimpicos($JJOO){
+    $inicio=1960;
+    $final=2016;
+
     for($i=$inicio ; $inicio<=$final ; $inicio+=4){
-
       if($JJOO[$inicio] != NULL){
-        print "En ".$inicio. " los JJOO se celebraron en ".$JJOO[$inicio]."\n";
+        print "En ".$inicio. " los JJOO se celebraron en ".$JJOO[$inicio]."<br>";
       }else{
         print "En ".$inicio. " NO se celebraron JJOO\n";
       }
     }
   }
 
-  juegosOlimpicos($JJOO, $inicio, $final);
+  juegosOlimpicos($JJOO);
 
 ?>

@@ -9,22 +9,14 @@
   $q_caramels=4;
 
 
-  function preuXocolata($p_xococalata, $q_xocolata){
-    return $p_xococalata*$q_xocolata;
-  }
-  function preuXiclets($p_xiclets, $q_xiclets){
-    return $p_xiclets*$q_xiclets;
-  }
-  function preuCaramels($p_caramels, $q_caramels){
-    return $p_caramels*$q_caramels;
+  function preuQuantitat($preu, $quantitat){
+    return $preu*$quantitat;
   }
 
-  function preuComanda($p_xococalata, $p_xiclets, $p_caramels, $q_xocolata, $q_xiclets, $q_caramels){
-    return preuXocolata($p_xococalata, $q_xocolata)+preuXiclets($p_xiclets, $q_xiclets)+preuCaramels($p_caramels, $q_caramels);
-  }
+  $comanda = array(preuQuantitat($p_xococalata, $q_xocolata), preuQuantitat($p_xiclets, $q_xiclets), preuQuantitat($p_caramels, $q_caramels));
 
-  echo "El preu de la teva comanda és de: ".preuComanda($p_xococalata, $p_xiclets, $p_caramels, $q_xocolata, $q_xiclets, $q_caramels);
+  echo "El preu de la teva comanda és de: ".array_sum($comanda);
 
-  //No me convence el código, algo me chirria... :(
+  // Ahora me convence más el código :)
 
 ?>
